@@ -53,7 +53,10 @@
                             "id": "149845e1-e0b4-4a2e-97e3-4a59c8bc2634",
                             "command": "EVENT_TEXT",
                             "args": {
-                                "text": "Welcome to\nGBStudio!"
+                                "text": [
+                                    "Beware of Idiots",
+                                    "They are very \ncommon"
+                                ]
                             }
                         }
                     ],
@@ -294,24 +297,83 @@
                     "direction": "down",
                     "script": [
                         {
-                            "id": "9769786a-b499-4657-917e-05c7e96cf2f4",
-                            "command": "EVENT_TEXT",
+                            "command": "EVENT_IF_FALSE",
                             "args": {
-                                "text": "Meow!"
-                            }
-                        },
-                        {
-                            "id": "c585ca68-8cb8-4a26-bcff-072845e80702",
-                            "command": "EVENT_SET_TRUE",
-                            "args": {
-                                "variable": "0"
-                            }
+                                "variable": "13",
+                                "__collapseElse": false
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "id": "9769786a-b499-4657-917e-05c7e96cf2f4",
+                                        "command": "EVENT_TEXT",
+                                        "args": {
+                                            "text": [
+                                                "...",
+                                                "What",
+                                                "What do you want",
+                                                "Go"
+                                            ],
+                                            "__collapse": true
+                                        }
+                                    },
+                                    {
+                                        "id": "c585ca68-8cb8-4a26-bcff-072845e80702",
+                                        "command": "EVENT_SET_TRUE",
+                                        "args": {
+                                            "variable": "0",
+                                            "__collapse": true
+                                        }
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "Angry",
+                                            "__collapse": true
+                                        },
+                                        "id": "2e200921-0b19-4ccd-b563-34015c63defc"
+                                    },
+                                    {
+                                        "command": "EVENT_SET_TRUE",
+                                        "args": {
+                                            "variable": "13",
+                                            "__collapse": true
+                                        },
+                                        "id": "e664ff0d-9e26-4531-858b-651c8752696b"
+                                    }
+                                ],
+                                "false": [
+                                    {
+                                        "command": "EVENT_TEXT",
+                                        "args": {
+                                            "text": [
+                                                "What do you not \nunderstand when I",
+                                                "Say Go?",
+                                                "I want you to go"
+                                            ],
+                                            "avatarId": "",
+                                            "__collapse": true
+                                        },
+                                        "id": "78f6a841-68dd-4966-8cfe-0e72cbe71377"
+                                    }
+                                ]
+                            },
+                            "id": "46f13b25-7cbb-4614-95ab-9cfcb8e901ce"
                         }
                     ],
                     "frame": 0,
                     "spriteType": "static",
                     "animSpeed": 15,
-                    "startScript": [],
+                    "startScript": [
+                        {
+                            "command": "EVENT_SET_FALSE",
+                            "args": {
+                                "variable": "13"
+                            },
+                            "id": "e5864f0f-4918-482d-b3c1-3b078d869f1f"
+                        }
+                    ],
                     "hit1Script": [],
                     "hit2Script": [],
                     "hit3Script": [],
@@ -638,7 +700,7 @@
                 0,
                 0,
                 15,
-                15,
+                0,
                 0,
                 0,
                 0,
@@ -670,7 +732,7 @@
                 0,
                 0,
                 15,
-                15,
+                0,
                 0,
                 0,
                 0,
@@ -702,7 +764,7 @@
                 0,
                 0,
                 15,
-                15,
+                0,
                 0,
                 0,
                 0,
@@ -766,13 +828,13 @@
                 0,
                 0,
                 15,
-                15,
                 0,
                 0,
                 0,
                 0,
                 0,
                 0,
+                0,
                 15,
                 15,
                 0,
@@ -791,7 +853,6 @@
                 15,
                 0,
                 0,
-                15,
                 15,
                 15,
                 15,
@@ -827,8 +888,8 @@
                 0,
                 0,
                 0,
-                15,
-                15,
+                0,
+                0,
                 15,
                 15,
                 0,
@@ -859,7 +920,8 @@
                 0,
                 0,
                 0,
-                15,
+                0,
+                0,
                 15,
                 15,
                 0,
@@ -894,12 +956,9 @@
                 0,
                 15,
                 15,
-                15,
                 0,
                 0,
                 0,
-                15,
-                15,
                 0,
                 0,
                 0,
@@ -923,14 +982,10 @@
                 0,
                 0,
                 0,
-                15,
-                15,
-                15,
-                15,
                 0,
                 0,
-                15,
-                15,
+                0,
+                0,
                 15,
                 15,
                 0,
@@ -955,14 +1010,20 @@
                 0,
                 0,
                 0,
-                15,
-                15,
-                15,
-                15,
+                0,
+                0,
                 0,
                 0,
+                0,
+                0,
+                0,
+                0,
                 15,
                 15,
+                0,
+                0,
+                0,
+                0,
                 15,
                 15,
                 0,
@@ -987,7 +1048,8 @@
                 0,
                 0,
                 0,
-                15,
+                0,
+                0,
                 15,
                 15,
                 0,
@@ -1022,7 +1084,6 @@
                 0,
                 15,
                 15,
-                15,
                 0,
                 0,
                 0,
@@ -1051,8 +1112,8 @@
                 0,
                 0,
                 0,
-                15,
-                15,
+                0,
+                0,
                 15,
                 15,
                 0,
@@ -1068,6 +1129,7 @@
                 0,
                 0,
                 0,
+                0,
                 15,
                 15,
                 15,
@@ -1083,10 +1145,10 @@
                 15,
                 0,
                 0,
-                15,
-                15,
+                0,
                 15,
                 15,
+                0,
                 0,
                 0,
                 0,
@@ -1115,7 +1177,7 @@
                 15,
                 15,
                 0,
-                15,
+                0,
                 15,
                 15,
                 0,
@@ -1148,7 +1210,6 @@
                 15,
                 0,
                 0,
-                15,
                 15,
                 15,
                 0,
@@ -1158,6 +1219,7 @@
                 0,
                 0,
                 0,
+                0,
                 15,
                 0,
                 0,
@@ -1179,8 +1241,7 @@
                 0,
                 15,
                 0,
-                15,
-                15,
+                0,
                 15,
                 15,
                 0,
@@ -1190,6 +1251,7 @@
                 0,
                 0,
                 0,
+                0,
                 15,
                 15,
                 15,
@@ -1211,10 +1273,10 @@
                 0,
                 15,
                 0,
-                15,
-                15,
+                0,
                 15,
                 15,
+                0,
                 0,
                 0,
                 0,
@@ -1243,7 +1305,7 @@
                 15,
                 15,
                 0,
-                15,
+                0,
                 15,
                 15,
                 0,
@@ -1278,7 +1340,8 @@
                 0,
                 15,
                 15,
-                15,
+                0,
+                0,
                 0,
                 0,
                 0,
@@ -1310,7 +1373,7 @@
                 15,
                 15,
                 0,
-                15,
+                0,
                 0,
                 0,
                 0,
@@ -1342,7 +1405,6 @@
                 15,
                 15,
                 0,
-                15,
                 0,
                 0,
                 0,
@@ -1371,7 +1433,7 @@
                 0,
                 0,
                 0,
-                15,
+                0,
                 15,
                 15,
                 0,
@@ -6221,11 +6283,11 @@
             "id": "1e27bb8e-c805-435a-8b87-05b4f50da4f0",
             "name": "cat",
             "symbol": "sprite_cat",
-            "numFrames": 1,
-            "type": "static",
+            "numFrames": 2,
+            "type": "animated",
             "filename": "cat.png",
-            "checksum": "acdc77db823a88d17537d263a436168ab01efe22",
-            "width": 16,
+            "checksum": "d68d1029e561958885eed513fe6ff4dbadd3441a",
+            "width": 32,
             "height": 16,
             "states": [
                 {
@@ -6334,9 +6396,116 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "id": "c8c18139-67b7-40c4-9fa4-3ae64fe6337b",
+                    "name": "Angry",
+                    "animations": [
+                        {
+                            "id": "c15e0c24-bece-4fb7-90ff-0308fc5a2a45",
+                            "frames": [
+                                {
+                                    "id": "bbd22955-03e6-4ed2-973b-603ccf36d8d3",
+                                    "tiles": [
+                                        {
+                                            "id": "eeae816f-5fbc-470e-81b4-c0b12fa9d878",
+                                            "x": 0,
+                                            "y": 0,
+                                            "sliceX": 16,
+                                            "sliceY": 0,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "c65bd265-88cf-41cb-9262-bd792d735774",
+                                            "x": 8,
+                                            "y": 0,
+                                            "sliceX": 24,
+                                            "sliceY": 0,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "483d3a45-f551-49e1-a903-00d497213c29",
+                            "frames": [
+                                {
+                                    "id": "d616569b-f653-4ced-ba57-334b739698ff",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "d5279a7f-38a7-4773-8d9d-c0b84b5bf5aa",
+                            "frames": [
+                                {
+                                    "id": "e74589b6-c470-466a-ac4b-3b215a5f6e69",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "aee7fd65-f206-4482-b544-da4b1fc460ed",
+                            "frames": [
+                                {
+                                    "id": "57d491cf-f2fb-4991-a2ca-31991df76c99",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "08ef960b-f89c-49c8-bbd5-d6c5c9a3b8db",
+                            "frames": [
+                                {
+                                    "id": "1532600e-9529-40e8-8a67-1cda3cca04f4",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6637c4c3-7e45-437b-882d-642b5a238cf7",
+                            "frames": [
+                                {
+                                    "id": "33e459ae-11cd-4481-a0ab-ef3ed2e3f9f9",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "91cff613-f66c-4519-bfd4-273efb21fcde",
+                            "frames": [
+                                {
+                                    "id": "09288e7a-57d9-43bc-9fbb-1f1d461e100b",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1da3e4a1-746c-40f8-ac77-188eefbfd06d",
+                            "frames": [
+                                {
+                                    "id": "d46da000-8f0f-4a56-bab1-d22337c58d50",
+                                    "tiles": []
+                                }
+                            ]
+                        }
+                    ],
+                    "animationType": "fixed",
+                    "flipLeft": true
                 }
             ],
-            "numTiles": 2,
+            "numTiles": 4,
             "canvasWidth": 16,
             "canvasHeight": 16,
             "boundsX": 0,
@@ -7890,7 +8059,7 @@
             "numFrames": 6,
             "type": "actor_animated",
             "filename": "player.png",
-            "checksum": "dbd613e741917771408554b9f0d2e10d7f7586c4",
+            "checksum": "6738bc74979c910fc5ec31de8f283d0d8ea05b3c",
             "width": 96,
             "height": 16,
             "states": [
@@ -9417,9 +9586,9 @@
         "showConnections": true,
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
-        "worldScrollX": 0,
-        "worldScrollY": 0,
-        "zoom": 100,
+        "worldScrollX": 919,
+        "worldScrollY": 831,
+        "zoom": 300,
         "customColorsEnabled": false,
         "sgbEnabled": false,
         "customHead": "",
@@ -9447,9 +9616,9 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            570,
-            189,
-            189
+            572,
+            188,
+            188
         ],
         "showNavigator": true,
         "defaultFontId": "26fa15df-3318-44ad-8bfd-feff8ba7991d",
