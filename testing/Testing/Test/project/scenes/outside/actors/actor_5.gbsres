@@ -1,0 +1,120 @@
+{
+  "_resourceType": "actor",
+  "id": "076a0612-024a-426a-85fc-3e1054b9f74e",
+  "_index": 4,
+  "symbol": "actor_4",
+  "prefabId": "",
+  "name": "",
+  "x": 4,
+  "y": 6,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "1e27bb8e-c805-435a-8b87-05b4f50da4f0",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "variable": "13",
+        "__collapseElse": false,
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "13"
+          },
+          "valueB": {
+            "type": "false"
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "9769786a-b499-4657-917e-05c7e96cf2f4",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "...",
+                "What",
+                "What do you want",
+                "Go"
+              ],
+              "__collapse": true
+            }
+          },
+          {
+            "id": "c585ca68-8cb8-4a26-bcff-072845e80702",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "0",
+              "__collapse": true,
+              "value": {
+                "type": "true"
+              }
+            }
+          },
+          {
+            "command": "EVENT_ACTOR_SET_STATE",
+            "args": {
+              "actorId": "$self$",
+              "spriteStateId": "Angry",
+              "__collapse": true
+            },
+            "id": "2e200921-0b19-4ccd-b563-34015c63defc"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "13",
+              "__collapse": true,
+              "value": {
+                "type": "true"
+              }
+            },
+            "id": "e664ff0d-9e26-4531-858b-651c8752696b"
+          }
+        ],
+        "false": [
+          {
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "What do you not \nunderstand when I",
+                "Say Go?",
+                "I want you to go"
+              ],
+              "avatarId": "",
+              "__collapse": true
+            },
+            "id": "78f6a841-68dd-4966-8cfe-0e72cbe71377"
+          }
+        ]
+      },
+      "id": "46f13b25-7cbb-4614-95ab-9cfcb8e901ce"
+    }
+  ],
+  "startScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "13",
+        "value": {
+          "type": "false"
+        }
+      },
+      "id": "e5864f0f-4918-482d-b3c1-3b078d869f1f"
+    }
+  ],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

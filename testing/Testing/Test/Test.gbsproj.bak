@@ -53,7 +53,10 @@
                             "id": "149845e1-e0b4-4a2e-97e3-4a59c8bc2634",
                             "command": "EVENT_TEXT",
                             "args": {
-                                "text": "Welcome to\nGBStudio!"
+                                "text": [
+                                    "Beware of Idiots",
+                                    "They are very \ncommon"
+                                ]
                             }
                         }
                     ],
@@ -294,29 +297,83 @@
                     "direction": "down",
                     "script": [
                         {
-                            "id": "9769786a-b499-4657-917e-05c7e96cf2f4",
-                            "command": "EVENT_TEXT",
+                            "command": "EVENT_IF_FALSE",
                             "args": {
-                                "text": [
-                                    "...",
-                                    "What",
-                                    "What do you want",
-                                    "Go"
+                                "variable": "13",
+                                "__collapseElse": false
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "id": "9769786a-b499-4657-917e-05c7e96cf2f4",
+                                        "command": "EVENT_TEXT",
+                                        "args": {
+                                            "text": [
+                                                "...",
+                                                "What",
+                                                "What do you want",
+                                                "Go"
+                                            ],
+                                            "__collapse": true
+                                        }
+                                    },
+                                    {
+                                        "id": "c585ca68-8cb8-4a26-bcff-072845e80702",
+                                        "command": "EVENT_SET_TRUE",
+                                        "args": {
+                                            "variable": "0",
+                                            "__collapse": true
+                                        }
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "Angry",
+                                            "__collapse": true
+                                        },
+                                        "id": "2e200921-0b19-4ccd-b563-34015c63defc"
+                                    },
+                                    {
+                                        "command": "EVENT_SET_TRUE",
+                                        "args": {
+                                            "variable": "13",
+                                            "__collapse": true
+                                        },
+                                        "id": "e664ff0d-9e26-4531-858b-651c8752696b"
+                                    }
+                                ],
+                                "false": [
+                                    {
+                                        "command": "EVENT_TEXT",
+                                        "args": {
+                                            "text": [
+                                                "What do you not \nunderstand when I",
+                                                "Say Go?",
+                                                "I want you to go"
+                                            ],
+                                            "avatarId": "",
+                                            "__collapse": true
+                                        },
+                                        "id": "78f6a841-68dd-4966-8cfe-0e72cbe71377"
+                                    }
                                 ]
-                            }
-                        },
-                        {
-                            "id": "c585ca68-8cb8-4a26-bcff-072845e80702",
-                            "command": "EVENT_SET_TRUE",
-                            "args": {
-                                "variable": "0"
-                            }
+                            },
+                            "id": "46f13b25-7cbb-4614-95ab-9cfcb8e901ce"
                         }
                     ],
                     "frame": 0,
                     "spriteType": "static",
                     "animSpeed": 15,
-                    "startScript": [],
+                    "startScript": [
+                        {
+                            "command": "EVENT_SET_FALSE",
+                            "args": {
+                                "variable": "13"
+                            },
+                            "id": "e5864f0f-4918-482d-b3c1-3b078d869f1f"
+                        }
+                    ],
                     "hit1Script": [],
                     "hit2Script": [],
                     "hit3Script": [],
@@ -643,7 +700,7 @@
                 0,
                 0,
                 15,
-                15,
+                0,
                 0,
                 0,
                 0,
@@ -675,7 +732,7 @@
                 0,
                 0,
                 15,
-                15,
+                0,
                 0,
                 0,
                 0,
@@ -707,7 +764,7 @@
                 0,
                 0,
                 15,
-                15,
+                0,
                 0,
                 0,
                 0,
@@ -771,13 +828,13 @@
                 0,
                 0,
                 15,
-                15,
                 0,
                 0,
                 0,
                 0,
                 0,
                 0,
+                0,
                 15,
                 15,
                 0,
@@ -796,7 +853,6 @@
                 15,
                 0,
                 0,
-                15,
                 15,
                 15,
                 15,
@@ -832,8 +888,8 @@
                 0,
                 0,
                 0,
-                15,
-                15,
+                0,
+                0,
                 15,
                 15,
                 0,
@@ -864,7 +920,8 @@
                 0,
                 0,
                 0,
-                15,
+                0,
+                0,
                 15,
                 15,
                 0,
@@ -899,12 +956,9 @@
                 0,
                 15,
                 15,
-                15,
                 0,
                 0,
                 0,
-                15,
-                15,
                 0,
                 0,
                 0,
@@ -928,14 +982,10 @@
                 0,
                 0,
                 0,
-                15,
-                15,
-                15,
-                15,
                 0,
                 0,
-                15,
-                15,
+                0,
+                0,
                 15,
                 15,
                 0,
@@ -960,14 +1010,20 @@
                 0,
                 0,
                 0,
-                15,
-                15,
-                15,
-                15,
+                0,
+                0,
                 0,
                 0,
+                0,
+                0,
+                0,
+                0,
                 15,
                 15,
+                0,
+                0,
+                0,
+                0,
                 15,
                 15,
                 0,
@@ -992,7 +1048,8 @@
                 0,
                 0,
                 0,
-                15,
+                0,
+                0,
                 15,
                 15,
                 0,
@@ -1027,7 +1084,6 @@
                 0,
                 15,
                 15,
-                15,
                 0,
                 0,
                 0,
@@ -1056,8 +1112,8 @@
                 0,
                 0,
                 0,
-                15,
-                15,
+                0,
+                0,
                 15,
                 15,
                 0,
@@ -1073,6 +1129,7 @@
                 0,
                 0,
                 0,
+                0,
                 15,
                 15,
                 15,
@@ -1088,10 +1145,10 @@
                 15,
                 0,
                 0,
-                15,
-                15,
+                0,
                 15,
                 15,
+                0,
                 0,
                 0,
                 0,
@@ -1120,7 +1177,7 @@
                 15,
                 15,
                 0,
-                15,
+                0,
                 15,
                 15,
                 0,
@@ -1153,7 +1210,6 @@
                 15,
                 0,
                 0,
-                15,
                 15,
                 15,
                 0,
@@ -1163,6 +1219,7 @@
                 0,
                 0,
                 0,
+                0,
                 15,
                 0,
                 0,
@@ -1184,8 +1241,7 @@
                 0,
                 15,
                 0,
-                15,
-                15,
+                0,
                 15,
                 15,
                 0,
@@ -1195,6 +1251,7 @@
                 0,
                 0,
                 0,
+                0,
                 15,
                 15,
                 15,
@@ -1216,10 +1273,10 @@
                 0,
                 15,
                 0,
-                15,
-                15,
+                0,
                 15,
                 15,
+                0,
                 0,
                 0,
                 0,
@@ -1248,7 +1305,7 @@
                 15,
                 15,
                 0,
-                15,
+                0,
                 15,
                 15,
                 0,
@@ -1283,7 +1340,8 @@
                 0,
                 15,
                 15,
-                15,
+                0,
+                0,
                 0,
                 0,
                 0,
@@ -1315,7 +1373,7 @@
                 15,
                 15,
                 0,
-                15,
+                0,
                 0,
                 0,
                 0,
@@ -1347,7 +1405,6 @@
                 15,
                 15,
                 0,
-                15,
                 0,
                 0,
                 0,
@@ -1376,7 +1433,7 @@
                 0,
                 0,
                 0,
-                15,
+                0,
                 15,
                 15,
                 0,
@@ -8002,7 +8059,7 @@
             "numFrames": 6,
             "type": "actor_animated",
             "filename": "player.png",
-            "checksum": "dbd613e741917771408554b9f0d2e10d7f7586c4",
+            "checksum": "6738bc74979c910fc5ec31de8f283d0d8ea05b3c",
             "width": 96,
             "height": 16,
             "states": [
@@ -9529,9 +9586,9 @@
         "showConnections": true,
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
-        "worldScrollX": 0,
-        "worldScrollY": 0,
-        "zoom": 100,
+        "worldScrollX": 919,
+        "worldScrollY": 831,
+        "zoom": 300,
         "customColorsEnabled": false,
         "sgbEnabled": false,
         "customHead": "",
@@ -9559,9 +9616,9 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            570,
-            189,
-            189
+            572,
+            188,
+            188
         ],
         "showNavigator": true,
         "defaultFontId": "26fa15df-3318-44ad-8bfd-feff8ba7991d",
